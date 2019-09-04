@@ -16,3 +16,6 @@ use Illuminate\Http\Request;
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+
+// api 放只做資料請求，不做 重新導向 & 回傳頁面
+// Route::middleware('auth:api')->post('/blog/', 'BlogController@store')->name('blog.store');

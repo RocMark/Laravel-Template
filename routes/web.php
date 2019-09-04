@@ -15,4 +15,7 @@
 //     return view('welcome');
 // });
 
-// Route::get('/', 'Controller@test')->name('blog.test');
+
+Route::prefix('blog')->group(function () {
+    Route::get('/', 'BlogController@index')->name('blog.index');
+});

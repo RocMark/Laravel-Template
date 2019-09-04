@@ -4,9 +4,21 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        {{-- CSRF Token --}}
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <script>window.Laravel = { csrfToken: '{{ csrf_token() }}'}</script>
+
+        {{-- 開發用: 禁用快取，記得拿掉 --}}
+        <meta http-equiv="pragma" content="no-cache">
+        <meta http-equiv="expires" content="0">
+        <meta http-equiv="cache-control" content="no-cache">
 
         <title>Laravel</title>
+
+        {{-- CSS --}}
+        <link rel="stylesheet" href="{{ asset('css/style.css')  }}">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -18,6 +30,9 @@
         <main>
             {{-- @yield('') --}}
         </main>
+
+
+        <script src="{{ asset('js/app.js') }}"></script>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
